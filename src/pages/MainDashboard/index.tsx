@@ -18,7 +18,27 @@ function MainDashboard() {
     textPokemon: "",
     imgPokemon: "",
   });
-  const [pokemon, setPokemon] = useState<{}>({});
+  const [pokemon, setPokemon] = useState<{
+    name: string;
+    abilities: any[];
+    height: number;
+    moves: any[];
+    order: number;
+    species: Object;
+    stats: any[];
+    types: any[];
+    weight: number;
+  }>({
+    name: "",
+    abilities: [],
+    height: 0,
+    moves: [],
+    order: 0,
+    species: {},
+    stats: [],
+    types: [],
+    weight: 0,
+  });
 
   const showModal = (data: any) => {
     setDataPokemon({
@@ -58,7 +78,9 @@ function MainDashboard() {
   return (
     <div className="flex flex-col justify-center items-center h-full w-full">
       <div className="mx-9 w-full">
-        <Typography className="ml-5 text-4xl font-bold mb-5">Pokedex</Typography>
+        <Typography className="ml-5 text-4xl font-bold mb-5">
+          Pokedex
+        </Typography>
         <div className="flex flex-wrap justify-center">
           {listPokemon.map((item: any) => (
             <Card
